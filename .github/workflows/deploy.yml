@@ -75,14 +75,13 @@ jobs:
           set -euo pipefail
           cd .donna-tools/leaf
           donna build
-          echo "$PWD/build/bin" >> "$GITHUB_PATH"
 
       - name: Build website
         shell: bash
         run: |
           set -euo pipefail
           rm -rf public
-          leaf build
+          ./.donna-tools/leaf/build/bin/leaf build
           test -f public/index.html
           test -f public/CNAME
 

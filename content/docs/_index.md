@@ -12,4 +12,4 @@ category = "Getting Started"
 
 # Language Tour
 
-The language tour will be written after the first deployment pipeline is live.
+The language tour will be written shortly.
