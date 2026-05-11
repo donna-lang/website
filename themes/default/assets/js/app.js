@@ -61,6 +61,7 @@
 
   function initDonnaHighlight() {
     document.querySelectorAll('pre code').forEach((code) => {
+      if (code.closest('[data-no-highlight]')) return;
       if (code.dataset.highlighted || !shouldHighlightDonna(code)) return;
       code.innerHTML = highlightDonna(code.textContent || '');
       code.dataset.highlighted = 'true';

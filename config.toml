@@ -53,8 +53,8 @@ Title = "Star the repos, open issues, and follow compiler and package developmen
 URL = "https://github.com/donna-lang"
 weight = 1
 
-[share.github]
-Name = "GitHub"
-Title = "Share on GitHub"
-URL = "https://github.com/donna-lang"
+[share.bluesky]
+Name = "Bluesky"
+Title = "Share on Bluesky"
+URL = "https://bsky.app/intent/compose?text=https://donna-lang.org"
 weight = 1

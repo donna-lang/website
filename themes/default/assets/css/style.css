@@ -317,7 +317,29 @@ body.theme-light .hl-comment { color: rgba(36,32,29,0.42); }
   align-items: center;
 }
 .error-panel {
+  background: var(--bg3);
+  border: 1px solid var(--border);
   box-shadow: 0 24px 80px rgba(0,0,0,0.28);
+}
+.error-panel pre,
+.error-panel pre code {
+  display: block;
+  background: none;
+  color: var(--text-dim);
+  padding: 0;
+  border-radius: 0;
+  white-space: pre;
+}
+.error-panel pre {
+  padding: 18px 22px 22px;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.875rem;
+  line-height: 1.82;
+  overflow-x: auto;
+}
+.error-panel .str {
+  color: oklch(0.74 0.1 145);
 }
 .error-copy {
   max-width: 460px;
