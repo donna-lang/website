@@ -294,6 +294,17 @@ footer { border-top: 1px solid var(--border); }
   color: var(--text);
   border-color: rgba(255,255,255,0.18);
 }
+.hl-kw { color: var(--orange); font-weight: 600; }
+.hl-type { color: oklch(0.72 0.1 260); }
+.hl-constructor { color: oklch(0.76 0.1 250); font-weight: 600; }
+.hl-fn { color: oklch(0.75 0.12 205); }
+.hl-var { color: oklch(0.78 0.08 90); }
+.hl-module { color: oklch(0.74 0.09 185); }
+.hl-op { color: oklch(0.8 0.12 70); font-weight: 600; }
+.hl-str { color: oklch(0.74 0.1 145); }
+.hl-num { color: oklch(0.72 0.1 300); }
+.hl-comment { color: rgba(245,240,236,0.32); font-style: italic; }
+body.theme-light .hl-comment { color: rgba(36,32,29,0.42); }
 .error-section {
   background: var(--bg2);
   border-top: 1px solid var(--border);
@@ -379,6 +390,15 @@ body.page-docs .page-nav-btn {
   background: transparent;
   transition: border-color 0.15s, transform 0.15s, color 0.15s;
 }
+body.page-docs .page-nav-btn,
+body.page-docs .page-nav-btn:visited,
+body.page-docs .page-nav-btn:hover,
+body.page-docs .page-nav-btn:focus,
+body.page-docs .page-nav-btn *,
+body.page-docs .page-nav-btn:hover * {
+  text-decoration: none;
+  border-bottom: 0;
+}
 body.page-docs .page-nav-btn:hover {
   color: var(--text);
   transform: translateY(-1px);
@@ -451,8 +471,8 @@ body.page-docs .code-block-bar {
   align-items: center;
   gap: 7px;
   padding: 11px 16px;
-  border-bottom: 1px solid var(--border);
-  background: rgba(0,0,0,0.22);
+  border-bottom: 1px solid rgba(255,255,255,0.045);
+  background: rgba(0,0,0,0.1);
 }
 
 body.page-article .code-block-label,
@@ -1512,11 +1532,16 @@ body.page-article .prose code {
 /* ─── CODE BLOCK ─── */
 
 body.page-article .code-block {
-      background: var(--bg3);
-      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.045);
       border-radius: 10px;
       overflow: hidden;
       margin: 22px 0 30px;
+    }
+
+body.theme-light.page-article .code-block {
+      background: rgba(255,255,255,0.72);
+      border-color: rgba(24,24,24,0.08);
     }
 
 
@@ -2703,11 +2728,16 @@ body.page-docs .docs-content code {
 /* ─── CODE BLOCK ─── */
 
 body.page-docs .code-block {
-      background: var(--bg3);
-      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.045);
       border-radius: 10px;
       overflow: hidden;
       margin: 20px 0 28px;
+    }
+
+body.theme-light.page-docs .code-block {
+      background: rgba(255,255,255,0.72);
+      border-color: rgba(24,24,24,0.08);
     }
 
 

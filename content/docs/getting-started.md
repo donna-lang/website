@@ -20,4 +20,15 @@ cd hello
 donna test
 ```
 
+```donna
+import donna/string
+
+fn route(title: String) -> String:
+  "/docs/" <> string.to_slug(title)
+
+pub fn main() -> Nil:
+  let path = route("Language Tour")
+  echo path
+```
+
 More detail is coming soon.
