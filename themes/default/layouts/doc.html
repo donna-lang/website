@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+<body class="page-docs">
+  {{> header}}
+
+  <div class="docs-layout">
+    <div class="sidebar-spacer" aria-hidden="true"></div>
+    <aside class="sidebar">
+      {{{doc_sidebar}}}
+    </aside>
+
+    <main class="docs-content">
+      {{{content}}}
+      {{{doc_nav}}}
+    </main>
+  </div>
+
+  {{> footer}}
+</body>
+</html>

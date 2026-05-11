@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+<body class="page-index">
+  {{> header}}
+
+  <div class="hero site-wrap" id="home">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        {{donna_version}}
+      </div>
+      <h1 class="hero-title">
+        Meet <em>Donna</em>,<br>
+        your language<br>
+        done right.
+      </h1>
+      <p class="hero-sub">
+        A self-hosted, statically typed functional programming language focused on clean design, developer happiness, and native binaries.
+      </p>
+      <div class="hero-actions">
+        <a href="#install" class="btn btn-primary">Get Started</a>
+        <a href="/docs/" class="btn btn-ghost">Language Tour</a>
+      </div>
+      <div class="install-snippet" data-copy-snippet>
+        <span class="prompt-symbol">$</span>
+        <code>curl -sSf https://donna-lang.org/install.sh | sh</code>
+        <span class="lbl" id="snip-lbl">copy</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="donna-stage">
+        <div class="donna-glow-orb"></div>
+        <img src="/assets/images/donna-no-circle.png" alt="Donna mascot" class="donna-img" />
+      </div>
+    </div>
+  </div>
+
+  <section class="features-section" id="features">
+    <div class="features-header site-wrap">
+      <div class="section-label">Why Donna</div>
+      <h2 class="section-title">Built different, by design</h2>
+      <p class="section-sub">Donna borrows the best ideas from functional languages and keeps the toolchain direct.</p>
+    </div>
+    <div class="features-grid site-wrap">
+      <div class="feature-card">
+        <div class="feature-title">Native Binaries</div>
+        <p class="feature-desc">Compiles to native machine code through QBE and a C compiler. No VM, no runtime ceremony.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Static Types</div>
+        <p class="feature-desc">A clear static type system catches mistakes while keeping source code compact.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Clean Syntax</div>
+        <p class="feature-desc">Indentation-based blocks, focused expressions, and module-level clarity.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Self-hosted</div>
+        <p class="feature-desc">The Donna compiler is written in Donna, so the language is tested on real compiler code.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Practical FFI</div>
+        <p class="feature-desc">Bind C libraries directly when a small native package is the right tool.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">One Tool</div>
+        <p class="feature-desc">Create projects, format, check, test, build, and run from the Donna CLI.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="code">
+    <div class="code-inner site-wrap">
+      <div class="section-label">Syntax</div>
+      <h2 class="section-title">Small programs stay readable</h2>
+      <div class="code-layout">
+        <div class="code-panel">
+          <div class="code-bar">
+            <div class="dot dot-r"></div>
+            <div class="dot dot-y"></div>
+            <div class="dot dot-g"></div>
+            <span class="code-filename">routes.donna</span>
+          </div>
+          <pre><code><span class="kw">import</span> donna/string
+
+<span class="kw">fn</span> <span class="fn">slug</span><span class="pu">(</span>title<span class="pu">:</span> <span class="ty">String</span><span class="pu">) -&gt;</span> <span class="ty">String</span><span class="pu">:</span>
+  <span class="fn">string.to_slug</span><span class="pu">(</span>title<span class="pu">)</span>
+
+<span class="kw">pub fn</span> <span class="fn">main</span><span class="pu">() -&gt;</span> <span class="ty">Nil</span><span class="pu">:</span>
+  <span class="kw">let</span> route <span class="pu">=</span> <span class="fn">slug</span><span class="pu">(</span><span class="str">"Language Tour"</span><span class="pu">)</span>
+  <span class="fn">echo</span> <span class="str">"/docs/"</span> <span class="pu">&lt;&gt;</span> route</code></pre>
+        </div>
+
+        <div class="code-notes">
+          <div class="code-note">
+            <span class="code-note-num">01</span>
+            <div>
+              <h4>Explicit imports</h4>
+              <p>Module calls are visible at the top of the file.</p>
+            </div>
+          </div>
+          <div class="code-note">
+            <span class="code-note-num">02</span>
+            <div>
+              <h4>Readable imports</h4>
+              <p>Modules are explicit and package code stays easy to follow.</p>
+            </div>
+          </div>
+          <div class="code-note">
+            <span class="code-note-num">03</span>
+            <div>
+              <h4>Public by opt-in</h4>
+              <p>Use <code>pub</code> to expose symbols. Private code stays private.</p>
+            </div>
+          </div>
+          <div class="code-note">
+            <span class="code-note-num">04</span>
+            <div>
+              <h4>Native output</h4>
+              <p>Donna builds real binaries while keeping source code compact.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="error-section" id="errors">
+    <div class="error-inner site-wrap">
+      <div class="code-panel error-panel">
+        <div class="code-bar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="code-filename">compiler output</span>
+        </div>
+        <pre><code><span class="log-word">    Checking </span>donna-real-error
+<span class="log-word">   Compiling </span>donna/shell
+<span class="log-word">   Compiling </span>donna/string
+<span class="log-word">   Compiling </span>donna/float
+<span class="log-word">   Compiling </span>donna/bool
+<span class="log-word">   Compiling </span>donna/option
+<span class="log-word">   Compiling </span>donna/files
+<span class="log-word">   Compiling </span>donna/result
+<span class="log-word">   Compiling </span>donna/dict
+<span class="log-word">   Compiling </span>donna/time
+<span class="log-word">   Compiling </span>donna/list
+<span class="log-word">   Compiling </span>donna/int
+<span class="log-word">   Compiling </span>donna-real-error
+<span class="err-title">error</span>: undefined module
+  <span class="err-rule">┌─</span> src/donna-real-error.donna:2:22
+  <span class="err-rule">│</span>
+<span class="err-line">2</span> <span class="err-rule">│</span>    let route = string.to_slug(<span class="str">"Language Tour"</span>)
+  <span class="err-rule">│</span>                       <span class="err-marker">^^^^^^^</span> <span class="err-explain">`string` has not been imported</span>
+
+<span class="err-note">hint:</span> add the missing import at the top of the file</code></pre>
+      </div>
+      <div class="error-copy">
+        <div class="section-label">Errors</div>
+        <h2 class="section-title">The compiler points at the problem</h2>
+        <p class="section-sub">This is real output from a Donna project that calls <code>string.to_slug</code> without importing <code>donna/string</code>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="install-section" id="install">
+    <div class="install-inner site-wrap">
+      <div class="section-label">Install</div>
+      <h2 class="section-title">Get Donna on your PATH</h2>
+      <p class="section-sub">The installer link is temporary while the release pipeline is finalized. The install flow will download a prebuilt Donna binary and guide users through adding it to their shell path.</p>
+      <div class="install-steps">
+        <div class="install-row">
+          <span class="install-num">01</span>
+          <div class="install-cmd" data-copy-command="curl -sSf https://donna-lang.org/install.sh | sh">
+            <span class="prompt">$</span>
+            <span>curl -sSf https://donna-lang.org/install.sh | sh</span>
+            <button class="copy-btn">copy</button>
+          </div>
+        </div>
+        <p class="install-hint">Downloads the latest release and installs the <code>donna</code> binary.</p>
+
+        <div class="install-row">
+          <span class="install-num">02</span>
+          <div class="install-cmd" data-copy-command="donna new my-project">
+            <span class="prompt">$</span>
+            <span>donna new my-project</span>
+            <button class="copy-btn">copy</button>
+          </div>
+        </div>
+        <p class="install-hint">Creates a project with a demo test and GitHub Actions workflow.</p>
+
+        <div class="install-row">
+          <span class="install-num">03</span>
+          <div class="install-cmd" data-copy-command="donna test && donna run">
+            <span class="prompt">$</span>
+            <span>donna test && donna run</span>
+            <button class="copy-btn">copy</button>
+          </div>
+        </div>
+        <p class="install-hint">Runs the test suite, then builds and runs the project.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="books-section" id="books">
+    <div class="community-inner site-wrap">
+      <div class="section-label">Books</div>
+      <h2 class="section-title">Long-form Donna guides</h2>
+      <p class="section-sub">This section will hold books and longer learning material. We are keeping the shelf empty until the first book draft is ready.</p>
+    </div>
+  </section>
+
+  <section class="install-section community-section" id="community">
+    <div class="community-inner site-wrap">
+      <div class="section-label">Community</div>
+      <h2 class="section-title">Follow the work</h2>
+      <p class="section-sub">Donna is early and moving fast. For now, GitHub is the center of the project.</p>
+      <div class="community-cards">
+        {{{social_cards}}}
+      </div>
+    </div>
+  </section>
+
+  {{> footer}}
+</body>
+</html>

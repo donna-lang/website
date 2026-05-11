@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+<body class="page-news">
+  {{> header}}
+
+  <div class="page-header">
+    <div class="page-header-inner site-wrap">
+      <div class="page-label">Latest updates</div>
+      <h1>News &amp; Releases</h1>
+      <p>Stay up to date with Donna's development, language changes, release notes, and project updates.</p>
+    </div>
+  </div>
+
+  <div class="news-main site-wrap">
+    <div class="articles">
+      {{{news_articles}}}
+    </div>
+
+    <aside class="news-sidebar">
+      <div class="sidebar-widget">
+        <h3>Filter by tag</h3>
+        <div class="tag-cloud">
+          {{{news_tags}}}
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>Recent posts</h3>
+        <ul class="recent-list">
+          {{{recent_posts}}}
+        </ul>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3>Links</h3>
+        <ul class="recent-list">
+          <li class="recent-item"><a href="/docs/">Language Tour</a></li>
+          <li class="recent-item"><a href="https://github.com/donna-lang/donna/releases">GitHub Releases</a></li>
+          <li class="recent-item"><a href="https://github.com/donna-lang">GitHub Organization</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  {{> footer}}
+</body>
+</html>

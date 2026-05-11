@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> head}}
+<body class="page-article">
+  {{> header}}
+
+  <div class="article-layout">
+    <main class="article-main">
+      <div class="breadcrumb">
+        <a href="/news/">News</a>
+        <span>/</span>
+        <span>{{title}}</span>
+      </div>
+
+      <header class="article-header" id="overview">
+        <div class="article-meta">
+          <span class="article-tag {{article_tag_class}}">{{article_tag}}</span>
+          <span class="article-date">{{date}}</span>
+          {{#read_time_label}}<span class="read-time">{{read_time_label}}</span>{{/read_time_label}}
+        </div>
+        <h1>{{title}}</h1>
+        {{#lead}}<p class="lead">{{lead}}</p>{{/lead}}
+        <div class="article-divider"></div>
+        <div class="article-author-row">
+          <div class="author-avatar">DL</div>
+          <div class="author-info">
+            <div class="author-name">{{author}}</div>
+            <div class="author-role">Published {{date}}</div>
+          </div>
+        </div>
+      </header>
+
+      <div class="prose">
+        {{{content}}}
+      </div>
+
+      <div class="article-footer">
+        {{#share_article}}<div class="share-row">
+          <span class="share-label">Share</span>
+          {{{share_buttons}}}
+        </div>{{/share_article}}
+        <div class="page-nav">
+          <a class="page-nav-btn" href="/news/">
+            <span>← Back to</span>
+            <strong>News</strong>
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  {{> footer}}
+</body>
+</html>

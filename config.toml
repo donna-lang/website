@@ -1,0 +1,59 @@
+title = "Donna"
+base_url = "https://donna-lang.org"
+version = "v0.1.0"
+content_dir = "content"
+output_dir = "public"
+asset_dir = "assets"
+static_dir = "static"
+theme = "default"
+paginate = 5
+author = "The Donna Team"
+social = "https://github.com/donna-lang"
+share_article = true
+comments = "none"
+contact = "mailto:hello@donna-lang.org"
+github_url = "https://github.com/donna-lang"
+releases_url = "https://github.com/donna-lang/donna/releases"
+roadmap_url = "https://github.com/orgs/donna-lang/projects"
+
+[menu.docs]
+Name = "Language Tour"
+Title = "Language Tour"
+URL = "/docs/"
+weight = 1
+
+[menu.code]
+Name = "Code"
+Title = "Code examples"
+URL = "/#code"
+weight = 2
+
+[menu.books]
+Name = "Books"
+Title = "Books"
+URL = "/#books"
+weight = 3
+
+[menu.news]
+Name = "News"
+Title = "News"
+URL = "/news/"
+weight = 4
+
+[menu.install]
+Name = "Get Started"
+Title = "Install Donna"
+URL = "/#install"
+weight = 5
+
+[community.github]
+Name = "GitHub"
+Title = "Star the repos, open issues, and follow compiler and package development."
+URL = "https://github.com/donna-lang"
+weight = 1
+
+[share.github]
+Name = "GitHub"
+Title = "Share on GitHub"
+URL = "https://github.com/donna-lang"
+weight = 1
