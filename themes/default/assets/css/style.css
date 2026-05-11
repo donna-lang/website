@@ -1533,7 +1533,7 @@ body.page-article .prose code {
 
 body.page-article .code-block {
       background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.045);
+      border: 1px solid transparent;
       border-radius: 10px;
       overflow: hidden;
       margin: 22px 0 30px;
@@ -1546,11 +1546,21 @@ body.theme-light.page-article .code-block {
 
 
 body.page-article .code-block pre {
-      padding: 22px 20px;
+      padding: 0;
+      margin: 0;
       font-family: var(--mono);
       font-size: 0.875rem;
       line-height: 1.82;
       overflow-x: auto;
+    }
+
+body.page-article .prose .code-block pre code {
+      display: block;
+      padding: 22px 20px;
+      background: none;
+      border-radius: 0;
+      color: var(--text-dim);
+      white-space: pre;
     }
 
 body.page-article .num { color: oklch(0.72 0.1 300); }
@@ -2716,6 +2726,16 @@ body.page-docs .docs-content a {
 
 body.page-docs .docs-content a:hover { border-bottom-color: var(--orange); }
 
+body.page-docs .docs-content .page-nav-btn,
+body.page-docs .docs-content .page-nav-btn:visited,
+body.page-docs .docs-content .page-nav-btn:hover,
+body.page-docs .docs-content .page-nav-btn:focus,
+body.page-docs .docs-content .page-nav-btn *,
+body.page-docs .docs-content .page-nav-btn:hover * {
+      border-bottom: 0 !important;
+      text-decoration: none !important;
+    }
+
 body.page-docs .docs-content code {
       font-family: var(--mono);
       font-size: 0.85em;
@@ -2729,7 +2749,7 @@ body.page-docs .docs-content code {
 
 body.page-docs .code-block {
       background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.045);
+      border: 1px solid transparent;
       border-radius: 10px;
       overflow: hidden;
       margin: 20px 0 28px;
@@ -2742,11 +2762,21 @@ body.theme-light.page-docs .code-block {
 
 
 body.page-docs .code-block pre {
-      padding: 22px 20px;
+      padding: 0;
+      margin: 0;
       font-family: var(--mono);
       font-size: 0.875rem;
       line-height: 1.82;
       overflow-x: auto;
+    }
+
+body.page-docs .docs-content .code-block pre code {
+      display: block;
+      padding: 22px 20px;
+      background: none;
+      border-radius: 0;
+      color: var(--text-dim);
+      white-space: pre;
     }
 
 body.page-docs .num { color: oklch(0.72 0.1 300); }
