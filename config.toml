@@ -1,5 +1,6 @@
 title = "Donna"
 base_url = "https://donna-lang.org"
+asset_base = "/assets"
 version = "v0.1.0"
 content_dir = "content"
 output_dir = "public"
