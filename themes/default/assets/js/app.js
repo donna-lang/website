@@ -54,6 +54,15 @@
     return html;
   }
 
+  function highlightDonnaError(source) {
+    return escapeHtml(source)
+      .replace(/^(error)(: .*)$/m, '<span class="err-title">$1</span><span class="err-text">$2</span>')
+      .replace(/^(hint)(: .*)$/m, '<span class="err-note">$1</span><span class="err-text">$2</span>')
+      .replace(/^(\s*[┌│])(.+)$/gm, '<span class="err-rule">$1</span><span class="err-path">$2</span>')
+      .replace(/^(\s*)([0-9]+)(\s*)(│)(.*)$/gm, '$1<span class="err-line">$2</span>$3<span class="err-rule">$4</span><span class="err-text">$5</span>')
+      .replace(/(\^+)(\s+`[^`]+`.*)$/gm, '<span class="err-marker">$1</span><span class="err-explain">$2</span>');
+  }
+
   function shouldHighlightDonna(code) {
     return code.classList.contains('language-donna')
       || /\b(pub fn|fn |import |pub type|pub const|case |let )\b/.test(code.textContent || '');
@@ -62,7 +71,13 @@
   function initDonnaHighlight() {
     document.querySelectorAll('pre code').forEach((code) => {
       if (code.closest('[data-no-highlight]')) return;
-      if (code.dataset.highlighted || !shouldHighlightDonna(code)) return;
+      if (code.dataset.highlighted) return;
+      if (code.classList.contains('language-donna-error')) {
+        code.innerHTML = highlightDonnaError(code.textContent || '');
+        code.dataset.highlighted = 'true';
+        return;
+      }
+      if (!shouldHighlightDonna(code)) return;
       code.innerHTML = highlightDonna(code.textContent || '');
       code.dataset.highlighted = 'true';
     });
@@ -172,10 +187,6 @@
   }
 
   function initCopyControls() {
-    document.querySelectorAll('[data-copy-snippet]').forEach((element) => {
-      element.addEventListener('click', () => window.copySnippet());
-    });
-
     document.querySelectorAll('[data-copy-command]').forEach((element) => {
       element.addEventListener('click', () => window.copyCmd(element, element.dataset.copyCommand));
     });
@@ -258,21 +269,6 @@
     const heroImage = document.querySelector('.hero-right');
     if (heroImage) heroImage.style.display = value === 'hide' ? 'none' : '';
     persist({ showDonna: value });
-  };
-
-  window.copySnippet = function copySnippet() {
-    copyToClipboard('curl -sSf https://donna-lang.org/install.sh | sh');
-    const label = document.getElementById('snip-lbl');
-    if (!label) return;
-
-    label.textContent = 'copied!';
-    label.style.color = 'var(--orange)';
-    label.style.opacity = '1';
-    setTimeout(() => {
-      label.textContent = 'copy';
-      label.style.color = '';
-      label.style.opacity = '';
-    }, 2000);
   };
 
   window.copyCmd = function copyCmd(element, text) {

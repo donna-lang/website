@@ -26,7 +26,7 @@ That explicit `string.` is not noise. It tells the reader where the function cam
 
 If you call a module without importing it, Donna points at the problem.
 
-```text
+```donna-error
 error: undefined module
   ┌─ src/example.donna:2:15
   │
@@ -45,4 +45,3 @@ fn private_message() -> String:
 pub fn public_message() -> String:
   private_message()
 ```
-

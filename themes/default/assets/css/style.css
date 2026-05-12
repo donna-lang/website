@@ -636,36 +636,6 @@ body.page-index .btn-ghost:hover {
       transform: translateY(-2px);
     }
 
-body.page-index .install-snippet {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 18px;
-      font-family: var(--mono);
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      cursor: pointer;
-      width: fit-content;
-      transition: border-color 0.18s;
-      user-select: none;
-    }
-
-body.page-index .install-snippet:hover { border-color: rgba(255,255,255,0.15); }
-
-body.page-index .install-snippet code { color: var(--orange); }
-
-body.page-index .install-snippet .lbl {
-      margin-left: 4px;
-      font-size: 0.72rem;
-      opacity: 0.45;
-      transition: opacity 0.18s;
-    }
-
-body.page-index .install-snippet:hover .lbl { opacity: 0.8; }
-
 /* ─── DONNA ───────────────────────────────── */
 
 body.page-index .hero-right {
@@ -910,6 +880,7 @@ body.page-index .install-cmd {
       display: flex;
       align-items: center;
       gap: 10px;
+      min-width: 0;
       background: var(--bg3);
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -919,13 +890,27 @@ body.page-index .install-cmd {
       color: var(--text);
       cursor: pointer;
       transition: border-color 0.18s;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+body.page-index .hero-install-cmd {
+      width: fit-content;
+      max-width: 100%;
+      margin-top: 2px;
     }
 
 body.page-index .install-cmd:hover { border-color: rgba(255,255,255,0.15); }
 
 body.page-index .install-cmd .prompt { color: var(--orange); user-select: none; }
 
+body.page-index .install-cmd > span:not(.prompt) {
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
 body.page-index .install-cmd .copy-btn {
+      flex: 0 0 auto;
       margin-left: auto;
       font-family: var(--mono);
       font-size: 0.72rem;
@@ -2802,6 +2787,11 @@ body.page-docs .docs-content .code-block pre code {
     }
 
 body.page-docs .num { color: oklch(0.72 0.1 300); }
+
+body.page-docs code.language-donna-error,
+body.page-article code.language-donna-error {
+      color: var(--text-dim);
+    }
 
 /* ─── CALLOUT ─── */
 
