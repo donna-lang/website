@@ -2996,7 +2996,6 @@ body.page-index .install-cmd .copy-btn {
 
   body.page-index .hero-install-cmd {
     width: 80%;
-    margin: 0 auto;
   }
 
   body.page-index .install-cmd:not(.hero-install-cmd) {
