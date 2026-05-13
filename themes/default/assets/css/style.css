@@ -2968,4 +2968,81 @@ body.page-packages .page-ellipsis {
   cursor: default;
 }
 
+/* Mobile safety for long commands and previous/next links. */
+body.page-index .hero-install-cmd,
+body.page-index .install-cmd {
+  box-sizing: border-box;
+  max-width: 100%;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.page-index .hero-install-cmd {
+  width: fit-content;
+}
+
+body.page-index .install-cmd .copy-btn {
+  position: sticky;
+  right: 0;
+}
+
+@media (max-width: 600px) {
+  body.page-index .hero-install-cmd,
+  body.page-index .install-cmd {
+    width: 100%;
+    padding: 11px 12px;
+    gap: 8px;
+    font-size: 0.78rem;
+  }
+
+  body.page-index .install-row {
+    grid-template-columns: 24px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  body.page-index .install-cmd .copy-btn {
+    font-size: 0.66rem;
+    padding: 3px 7px;
+  }
+}
+
+@media (max-width: 520px) {
+  body.page-docs .page-nav,
+  body.page-article .page-nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 12px;
+    margin-top: 36px;
+    padding-top: 22px;
+  }
+
+  body.page-docs .page-nav > span,
+  body.page-article .page-nav > span {
+    display: block;
+  }
+
+  body.page-docs .page-nav-btn,
+  body.page-article .page-nav-btn {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  body.page-docs .page-nav-btn span,
+  body.page-article .page-nav-btn span {
+    font-size: 0.64rem;
+    letter-spacing: 0.04em;
+  }
+
+  body.page-docs .page-nav-btn strong,
+  body.page-article .page-nav-btn strong {
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+
+  body.page-article .page-nav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 /* ══════════════════════════════════════════ */
