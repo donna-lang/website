@@ -1069,6 +1069,10 @@ body.page-index .tweak-row select {
 @media (max-width: 960px) {
 body.page-index .hero { grid-template-columns: 1fr; min-height: auto; padding: 88px 24px 36px; }
 
+body.page-index .hero-left { min-width: 0; max-width: 100%; }
+
+body.page-index .hero-sub { max-width: 100%; }
+
 body.page-index .hero-right { display: none; }
 
 body.page-index .features-grid { grid-template-columns: 1fr 1fr; }
@@ -2994,11 +2998,8 @@ body.page-index .install-cmd .copy-btn {
     font-size: 0.78rem;
   }
 
-  body.page-index .hero-install-cmd {
-    width: 80%;
-  }
-
-  body.page-index .install-cmd:not(.hero-install-cmd) {
+  body.page-index .hero-install-cmd,
+  body.page-index .install-cmd {
     width: 100%;
   }
 
