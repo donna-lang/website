@@ -1576,6 +1576,14 @@ body.page-article .prose .code-block pre code {
 
 body.page-article .num { color: oklch(0.72 0.1 300); }
 
+body.page-article .prose img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto 28px;
+    }
+
 /* ─── CALLOUT ─── */
 
 body.page-article .callout {
