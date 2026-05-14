@@ -5,7 +5,6 @@ date = "2026-05-14"
 layout = "post"
 draft = false
 tags = ["tooling", "editor"]
-weight = 2
 lead = "Tree-sitter support is here, bringing accurate syntax highlighting to editors that support it."
 read_time = "3 min 15 sec read"
 ---

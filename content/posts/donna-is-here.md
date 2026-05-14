@@ -5,7 +5,6 @@ date = "2026-05-10"
 layout = "post"
 draft = false
 tags = ["news", "release"]
-weight = 1
 lead = "The Donna website is live, and the first public release is here."
 read_time = "2 min 45 sec read"
 ---
