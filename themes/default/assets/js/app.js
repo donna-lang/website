@@ -354,7 +354,7 @@
         article.style.display = '';
         return;
       }
-      article.style.display = article.querySelector(`.article-tag.${tag}`) ? '' : 'none';
+      article.style.display = article.dataset.tags?.split(',').includes(tag) ? '' : 'none';
     });
   };
 
