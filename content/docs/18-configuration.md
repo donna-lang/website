@@ -26,6 +26,8 @@ Dependencies are declared in TOML tables.
 ```toml
 [dependencies]
 donna = { git = "https://github.com/donna-lang/donna_stdlib", version = ">=0.1.0 and <1.0.0" }
+
+[dev-dependencies]
 unittest = { git = "https://github.com/donna-lang/unittest", tag = "v0.1.1" }
 ```
 
